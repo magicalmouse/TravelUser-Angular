@@ -1,0 +1,21 @@
+<mat-spinner style="z-index: 200;" *ngIf="showSpinner"></mat-spinner>
+<div style = "position: relative; width: 100%; height: 100%;">
+        <image-cropper
+            [imageChangedEvent]="imageChangedEvent"
+            [maintainAspectRatio]="true"
+            [aspectRatio]="1 / 1"
+            [resizeToWidth]="250"
+            format="png"
+            roundCropper = true
+            onlyScaleDown = true
+            (imageCropped)="imageCropped($event)"
+            (imageLoaded)="imageLoaded()"
+            (loadImageFailed)="loadImageFailed()"
+        ></image-cropper>
+
+    <input style = "display:none;" id="profilePhotoInputDialog" type="file" (change) ="fileChangeEvent($event)" />
+
+    <button class = "standard-button" style = "margin-bottom: 150px;" mat-raised-button (click) = "selectProfilePhoto()">Change Photo</button>
+
+    <button class = "standard-button" style = "position: absolute; bottom: 5px; right: 5px;" mat-raised-button (click) = "uploadPhoto()">Save</button>
+</div>

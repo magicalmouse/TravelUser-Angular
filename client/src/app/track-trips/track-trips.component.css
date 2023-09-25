@@ -1,0 +1,274 @@
+#main-wrapper {
+	width: 1250px;
+	margin: 0px auto;
+}
+
+mat-card {
+	background-color: #ffffff;
+	margin: 20px auto 0px auto;
+}
+
+th.mat-header-cell {
+	text-align: center !important;
+}
+
+td.mat-cell {
+	text-align: center;
+}
+
+.cell-container {
+	display: flex;
+	justify-content: center;
+	min-width: 85px;
+}
+
+.mat-icon-button {
+	width: auto;
+	min-width: 10px;
+}
+
+#content-wrapper {
+	width: 1200px;
+	margin-left: 8px;
+}
+
+#options-wrapper {
+	width: 1176px;
+	height: 80px;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+}
+
+#filters-wrapper {
+	position: absolute;
+	right: 600px;
+}
+
+#filters-header {
+	color: rgba(0, 0, 0, 0.87);
+	margin-right: 20px;
+}
+
+mat-card-title {
+	font-size: 16px;
+	width: 400px;
+}
+
+#start-date-wrapper {
+	position: absolute;
+	right: 340px;
+	top: 2px;
+}
+
+#end-date-wrapper {
+	position: absolute;
+	right: 190px;
+	top: 2px;
+}
+
+#xlsx-icon {
+	width: 40px;
+	height: 40px;
+	margin-left: 700px;
+	cursor: pointer;
+}
+
+.date-picker {
+	width: 150px;
+}
+
+.date-picker-input {
+	color: #23292e;
+}
+
+#refresh {
+	padding: 4px;
+	position: absolute;
+	right: 10px;
+	top: 24px;
+	font-size: 32px;
+	cursor: pointer;
+}
+
+.table-wrapper {
+	height: 500px;
+	max-height: 500px;
+	overflow: auto;
+}
+
+#paginator {
+	margin-top: 6px;
+	margin-bottom: 12px;
+	margin-left: 950px;
+}
+
+.filter-input {
+	width: 90px;
+	margin: 0px 9px;
+}
+
+.search-icon {
+	cursor: pointer;
+}
+
+.dialog-button {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+}
+
+.trip-event-col {
+	font-size: 12px;
+	padding: 4px 4px;
+	text-align: left;
+}
+
+.trip-event-col-1 {
+	width: 130px;
+}
+
+.trip-event-col-2 {
+	width: 240px;
+}
+
+.trip-event-col-3 {
+	width: 130px;
+}
+
+.trip-event-col-4 {
+	width: 50px;
+}
+
+.cancel-cancel {
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.cancel-pending {
+	font-size: 12px;
+	cursor: default;
+}
+
+.mat-progress-spinner {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -50px;
+	margin-top: -50px;
+}
+
+.dialog-wrapper {
+	font-family: 'Avenir';
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.confirmation-number {
+	font-size: 14px;
+	padding-top: 8px;
+	margin-left: 12px;
+}
+
+#map-wrapper {
+	height: 600px;
+	width: 100%;
+}
+
+#map {
+	height: 100%;
+	width: 100%;
+	background-color: black;
+}
+
+#update-map-button {
+	position: absolute;
+	bottom: 5px;
+	right: 70px;
+}
+
+#details-table-wrapper {
+	margin-bottom: 50px;
+	margin-left: 2px;
+	margin-top: 20px;
+}
+
+#details-table {
+	border-collapse: collapse;
+	height: 500px;
+}
+
+.details-td-table {
+	border-collapse: inherit;
+	margin-top: 40px;
+}
+
+.short-form-field {
+	width: 285px;
+}
+
+.long-form-field {
+	width: 450px;
+}
+
+#comments-form-field {
+	width: 935px;
+	height: 100px;
+}
+
+#comments-textarea {
+	width: 935px;
+	height: 100px;
+	resize: none;
+}
+
+#events-table-wrapper {
+	width: 100%;
+	height: 500px;
+	overflow: auto;
+}
+
+.mat-progress-spinner {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -50px;
+	margin-top: -50px;
+}
+
+::ng-deep
+	.mat-form-field-appearance-fill.mat-form-field-disabled
+	.mat-form-field-flex {
+	/* makes the date picker form fields have a transparent background */
+	background-color: transparent !important;
+}
+
+th.mat-column-item,
+td.mat-column-item {
+	/* adding padding to the item column in the trip list table */
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+::ng-deep .mat-select-panel {
+	max-height: none !important;
+}
+
+mat-icon {
+	font-size: 12pt;
+}
+
+.chip-spinner {
+	position: relative;
+	left: unset;
+	top: unset;
+	margin-left: unset;
+	margin-top: unset;
+	display: unset;
+}
+
+.mdc-chip ::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+	stroke: #666363;
+}

@@ -1,0 +1,99 @@
+<!-- <mat-spinner style="z-index: 200;" *ngIf="gettingSession"></mat-spinner>
+<aside class="mdc-drawer mdc-drawer--temporary mdc-typography page-content mat-elevation-z5" *ngIf="isLoggedIn" style = "z-index: 200;">
+  <nav class="mdc-drawer__drawer">
+    <header class="mdc-drawer__header">
+    </header>
+    <nav class="mdc-drawer__content" style="font-size: 22px;">
+        <div class="menu">
+          <a class="menu-item" (click)="onNavigate(1)">
+            <table>
+              <tr>
+                <td class="menu-header-1">
+                  <strong>Home</strong>
+                </td>
+                <td>                   
+                </td>
+              </tr>
+            </table>
+          </a>
+        </div>
+        <div class="menu">
+          <a class="menu-item" (click) = "openFeedbackDialog()">
+            <table>
+              <tr>
+                <td class="menu-header-1">
+                  <strong>Send Feedback</strong>
+                </td>
+                <td>                   
+                </td>
+              </tr>
+            </table>
+          </a>
+        </div>
+        <div class="menu">
+          <a class="menu-item" style = "text-decoration: none; color: inherit" href = "../assets/files/TaxiAccountPortalDocumentation.pdf" target = "_blank">
+            <table>
+              <tr>
+                <td class="menu-header-1">
+                  <strong>Taxi Account Portal Documentation </strong>
+                </td>
+                <td>                   
+                </td>
+              </tr>
+            </table>
+          </a>
+        </div>
+    </nav>
+  </nav>
+</aside>
+<div class="flex-container">
+  <header class="mdc-top-app-bar top-bar">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <a class="material-icons mdc-top-app-bar__navigation-icon" (click)="toggleDrawer()" 
+          *ngIf="isLoggedIn">menu</a>
+        <span class="mdc-top-app-bar__title" (click)="onNavigate(1)">Taxi Account Portal</span>
+        <span class = "mdc-top-app-bar__subtitle" (click)="onNavigate(1)">Rides for business</span>
+      </section>
+    </div>
+    <div class="user-controls" *ngIf="isLoggedIn"> 
+      <table id = "user-controls">
+        <tr (click)="toggleUser()">
+          <td id = "user-controls-td">
+            <div id = "user-controls-td-div">
+              <img src="{{shared.appUser.profilePhoto}}"  id = "profile-photo-icon" />
+              
+              <div>{{ appUser.firstName }} {{ appUser.lastName }}</div>
+          </div>
+          </td>
+        </tr>
+        <tr *ngIf="userActive">
+          <td>
+            <mat-nav-list  class="mat-elevation-z2">
+              <a mat-list-item (click)="onNavigate(10)"> Profile </a>
+              <a mat-list-item (click)="onNavigate(11)" *ngIf = "appUser.admin == 1 || appUser.rootAdmin == 1"> Manage Users </a>
+              <a mat-list-item (click)="onLogout()"> Logout </a>
+            </mat-nav-list>
+          </td>
+        </tr>
+      </table>  
+    </div>      
+  </header>
+</div>
+<div id = "main-wrapper" *ngIf="!isLoggedIn && !completingRegistration && !resetPassword && !gettingSession">
+  <app-login (onLogin)="onLogin($event)">
+
+  </app-login>
+</div>
+<div class="page-content" *ngIf="isLoggedIn || completingRegistration || resetPassword">
+    <div id = "breadcrumb-trail-wrapper">
+      <div *ngIf = "shared.breadCrumbs">
+        <i id = "home-icon" class="material-icons" (click) = "onNavigate(1)">home</i> 
+        <span [innerHTML]="shared.breadCrumbs"></span>
+      </div>
+      
+    </div>
+  <router-outlet>
+  </router-outlet>
+</div>
+ -->

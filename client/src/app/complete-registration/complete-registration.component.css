@@ -1,0 +1,39 @@
+#main-wrapper {
+    width: 500px; 
+    margin: 0 auto;
+}
+
+mat-card-title {
+    font-size: 1.2em !important;
+}
+
+#content-wrapper {
+    width: 400px; 
+    margin: 0 auto;
+}
+
+mat-form-field {
+    width: 400px;
+}
+
+.confirm-element {
+    width: 400px;
+}
+
+.example-chars {
+    color: #278502
+}
+
+.mat-progress-spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+}
+
+#confirm-button {
+    margin-left: 220px; 
+    margin-top: 20px; 
+    margin-bottom: 20px;
+}

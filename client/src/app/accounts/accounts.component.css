@@ -1,0 +1,108 @@
+.main-wrapper {
+	width: 1050px;
+	margin: 0px auto;
+	/* margin-top: 20px; */
+}
+
+.mat-card-title {
+	font-size: 16px;
+}
+
+.stats-element {
+	color: #737373;
+	width: 120px;
+	margin: 6px;
+	text-align: center;
+}
+
+.stats-quantity {
+	font-size: 36px;
+}
+
+.stats-label {
+	font-size: 14px;
+}
+
+.start-date-wrapper {
+	margin-right: 10px;
+}
+
+mat-form-field {
+	width: 150px;
+}
+
+.end-date-wrapper {
+	margin-right: 10px;
+}
+
+.chips {
+	margin-left: 15px;
+}
+
+::ng-deep
+	.mat-form-field-appearance-fill.mat-form-field-disabled
+	.mat-form-field-flex {
+	/* makes the background of the two datepickers transparent */
+	background-color: transparent !important;
+}
+
+.trip-codes-wrapper {
+	width: 1000px;
+	margin: 0px auto;
+	padding: 25px 0px 0px 0px;
+}
+
+.trips-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+.accounts-wrapper {
+	width: 1050px;
+	margin: 0px auto;
+	/* put back when show trip codes ad  */
+	/* padding: 25px 0px 0px 0px; */
+	padding: 40px 0px 0px 0px;
+}
+
+.table-wrapper {
+	position: relative;
+	/* put back when show trip codes ad  */
+	/* height: 350px;  */
+	height: 500px;
+	overflow: auto;
+}
+
+.mat-progress-spinner {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -50px;
+	margin-top: -50px;
+}
+
+th.mat-column-name,
+td.mat-column-name {
+	/* adds padding to the name column in the table */
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+::ng-deep
+	.mat-form-field-appearance-fill.mat-form-field-disabled
+	.mat-form-field-flex {
+	/*fixes issue with the status dropdown being transparent */
+	background-color: transparent !important;
+}
+
+::ng-deep .mat-select-panel {
+	max-height: none !important;
+}
+
+.mat-dialog-container {
+	position: relative;
+}

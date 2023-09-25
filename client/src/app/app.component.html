@@ -1,0 +1,77 @@
+<mat-spinner style="z-index: 200;" *ngIf="gettingSession"></mat-spinner>
+<div *ngIf = "userActive" class = "overlay" (click) = "userActive = !userActive"></div>
+<mat-toolbar class = "mdc-top-app-bar top-bar">
+  <a
+    *ngIf = "isLoggedIn"
+    style = "margin-right: 10px; margin-left: 10px; cursor: pointer;"
+    class = "material-icons mdc-top-app-bar__navigation-icon"
+    (click) = "sidenav.toggle()">
+    menu
+  </a>
+  <div (click) = "onNavigate(1)">
+    <span class = "mdc-top-app-bar__title">Taxi Account Portal</span>
+    <span class = "mdc-top-app-bar__subtitle">Rides for business</span>
+  </div>
+  <span style = "flex: 1 1 auto;"></span>
+</mat-toolbar>
+<div class="user-controls" *ngIf="isLoggedIn" style = "z-index: 902; position: fixed; "> 
+  <table id = "user-controls">
+    <tr (click)="toggleUser()">
+      <td id = "user-controls-td">
+        <div id = "user-controls-td-div">
+          <img src="{{shared.appUser.profilePhoto}}"  id = "profile-photo-icon" />
+          
+          <div>{{ appUser.firstName }} {{ appUser.lastName }}</div>
+      </div>
+      </td>
+    </tr>
+    <tr *ngIf="userActive">
+      <td>
+        <mat-nav-list  class="mat-elevation-z2">
+          <a mat-list-item style = "font-family: Avenir, sans-serif;" (click)="onNavigate(10)"> Profile </a>
+          <a mat-list-item style = "font-family: Avenir, sans-serif;" (click)="onNavigate(11)"> Manage Users </a>
+          <a mat-list-item style = "font-family: Avenir, sans-serif;" (click)="onLogout()"> Logout </a>
+        </mat-nav-list>
+      </td>
+    </tr>
+  </table>  
+</div>
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="over" style = "margin-top: 64px;width: 17%;" class = "mat-elevation-z5">
+      <img src = "../assets/images/drawer-header-bg.png" style = "width: 50%; display: block; margin: 0 auto; margin-top: 24px;">
+      <mat-list>
+        <mat-list-item class = "sidenav-list-item" (click) = "onNavigate(1); sidenav.close()">
+          <strong>Home</strong>
+        </mat-list-item>
+        <mat-list-item class = "sidenav-list-item" (click) = "openFeedbackDialog()">
+          <strong>Send Feedback</strong>
+        </mat-list-item>
+        <mat-list-item class = "sidenav-list-item">
+          <a style = "text-decoration: none; color: inherit;" href = "../assets/files/TaxiAccountPortalDocumentation.pdf" target = "_blank">
+          <strong>Taxi Account Portal Documentation</strong>
+          </a>
+        </mat-list-item>
+      </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+      <div id = "main-wrapper" *ngIf="!isLoggedIn && !completingRegistration && !resetPassword && !gettingSession">
+          <app-login (onLogin)="onLogin($event)">
+        
+          </app-login>
+        </div>
+        <div class="page-content" style = "margin-top: 93px;" *ngIf="isLoggedIn || completingRegistration || resetPassword">
+            <div id = "breadcrumb-trail-wrapper">
+              <div *ngIf = "shared.breadCrumbs">
+                <i id = "home-icon" class="material-icons" (click) = "onNavigate(1)">home</i> 
+                <span [innerHTML]="shared.breadCrumbs"></span>
+              </div>
+              
+            </div>
+          <router-outlet>
+          </router-outlet>
+        </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,82 @@
+<div class="flex-container">
+    <div class="content-title"> 
+        Invoices
+    </div>
+    <div style="font-size: 14px; padding-top: 8px; margin-left: 12px;" *ngIf="appUser">
+        {{ currentAccount.name }}
+    </div>
+</div>
+<div style="margin-left: 8px;">
+    <table style="width: 975px; border-collapse: collapse;" *ngIf="appUser">
+        <thead style="display: block; background-color: #faed1a; overflow: auto;">
+            <tr>
+                <th class="col col-1">
+                    Ref Nbr
+                </th> 
+                <th class="col col-2">
+                    Created Date/Time
+                </th> 
+                <th class="col col-3">
+                    Orig Doc Amt
+                </th> 
+                <th class="col col-4">
+                    Doc Balance
+                </th> 
+                <th class="col col-5">
+                    Doc Type
+                </th> 
+                <th class="col col-6">
+                    Doc Date
+                </th> 
+                <th class="col col-7">
+                    Company ID
+                </th> 
+                <th class="col col-8">
+                    Cust ID
+                </th> 
+                <th class="col col-9">
+                    Due Date
+                </th> 
+                <th class="col">
+                    
+                </th>  
+            </tr>
+        </thead>
+        <tbody style="display: block;" #listBody>
+            <tr style="padding-top: 4px; border-bottom: 1px solid #e0e0e0" *ngFor="let invoice of invoices; index as i">
+                <td class="col col-1">
+                    {{ invoice.refNbr }}
+                </td> 
+                <td class="col col-2">
+                    {{ displayDateTime(invoice.crtdDateTime) }}
+                </td> 
+                <td class="col col-3">
+                    {{ invoice.origDocAmt.toFixed(2) }}
+                </td>
+                <td class="col col-4">
+                    {{ invoice.docBal.toFixed(2) }}
+                </td>
+                <td class="col col-5">
+                    {{ invoice.docType }}
+                </td>
+                <td class="col col-6">
+                    {{ displayDate(invoice.docDate) }}
+                </td>
+                <td class="col col-7">
+                    {{ invoice.cpnyID }}
+                </td>
+                <td class="col col-8">
+                    {{ invoice.custID }}
+                </td>
+                <td class="col col-9">
+                    {{ displayDate(invoice.dueDate) }}
+                </td>
+                <td style="padding: 4px 4px;">
+                    <div class="mdc-chip" tabindex="{{ i }}" (click)="onView(invoice.refNbr)">
+                        <div class="mdc-chip__text">View</div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

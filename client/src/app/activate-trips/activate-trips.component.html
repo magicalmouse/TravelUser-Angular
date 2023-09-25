@@ -1,0 +1,122 @@
+<mat-spinner style="z-index: 200;" *ngIf="showSpinner"></mat-spinner>
+<div style="width: 920px; margin: 0px auto;">
+    <mat-card class='mat-elevation-z4' style="background-color: #ffffff;">
+        <mat-card-header>
+            <mat-card-title>    
+                <div class="flex-container">
+                    <div class="content-title"> 
+                        Activate/Cancel Trip
+                    </div>
+                    <div class="account-context" *ngIf="appUser">
+                        {{ currentAccount.name }}
+                    </div>
+                </div>
+            </mat-card-title>
+        </mat-card-header>
+        <ol style="font-size: 14px;">
+            <li>
+                <div>
+                    In order for you to be able to activate or cancel a trip, please enter the Confirmation Number of the desired Reservation below.<br />
+                    Note: Reservation must have been made for the account: {{ currentAccount.name }}
+                </div>
+                <div class="vertical-space-24">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Confirmation Number</mat-label>
+                        <input matInput #confirmNbr>
+                    </mat-form-field>
+                    <button class="standard-button trip-search-button" mat-raised-button (click)="getTripDetail()">
+                        Search
+                    </button>
+                </div>
+            </li>
+            <li *ngIf="tripDetail && tripDetail.tripNbr > 0">
+                <div>
+                    Please review your Reservation below. You may modify the trip comments.
+                </div> 
+                <table class="vertical-space-12" style="border-collapse: collapse;">
+                    <tr>
+                        <td>
+                            <table style="border-collapse: inherit;">
+                                <tr>
+                                    <td class="col-300">
+                                        <div class="detail-250">
+                                            <span class="detail-header">Confirmation #</span><br>
+                                            {{ nbrDisplay(tripDetail.tripNbr) }}
+                                        </div>
+                                    </td>
+                                    <td class="col-300">
+                                        <div class="detail-250">
+                                            <span class="detail-header">Due Pickup Time</span><br>
+                                            {{ displayDateTime(tripDetail.dueDtTm) }}
+                                        </div>  
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>            
+                    </tr>
+                    <tr>
+                        <td>
+                            <table style="border-collapse: inherit;">
+                                <tr>
+                                    <td class="col-450">
+                                        <div class="detail-400">
+                                            <span class="detail-header">PickUp Address</span><br>
+                                            {{ addressDisplay(tripDetail.pkupStrNbr, tripDetail.pkupStrName, tripDetail.pkupCity) }}
+                                        </div>                              
+                                    </td>
+                                    <td class="col-450">
+                                        <div class="detail-400">
+                                            <span class="detail-header">Drop-Off Address</span><br>
+                                            {{ addressDisplay(tripDetail.destStrNbr, tripDetail.destStrName, tripDetail.destCity) }}
+                                        </div>                              
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table style="border-collapse: inherit;">
+                                <tr>
+                                    <td class="col-300">
+                                        <div class="detail-250">
+                                            <span class="detail-header">Name</span><br>
+                                            {{ nameDisplay(tripDetail.lastName, tripDetail.firstName) }}
+                                        </div>                              
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>			
+                    <tr>
+                        <td>
+                            <table style="border-collapse: inherit;">
+                                <tr>
+                                    <td class="detail-row col-900">
+                                        <div class="detail-850"> 
+                                            <mat-form-field style="width: 825px;" appearance="fill" [floatLabel]="'always'">
+                                                <mat-label>Comments</mat-label>
+                                                <textarea matInput maxlength="255" #comments>{{ tripDetail.comments }}</textarea>
+                                                <mat-hint>Note: Comment length limited to 255 characters.</mat-hint>
+                                            </mat-form-field>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <div class="vertical-space-24">
+                    <button class="standard-button" mat-raised-button (click)="onActivate()"
+                        *ngIf="showActivate">
+                        Activate Now
+                    </button>
+                    <button class="standard-button trip-cancel-button" mat-raised-button (click)="onCancel()"
+                        [ngStyle]="{'margin-left.px': showActivate ? '12' : '0'}">
+                        Cancel Reservation
+                    </button>
+                </div> 
+            </li>
+        </ol>
+    </mat-card>
+</div>

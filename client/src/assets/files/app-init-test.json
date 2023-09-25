@@ -1,0 +1,7 @@
+{
+	"application": 1,
+	"authPath": "https://9lwaroch9i.execute-api.us-east-2.amazonaws.com/prod/",
+	"ccsiReservationPath": "https://reservations.taxireservations.co/AccountReservationsWeb/",
+	"bnlReservationPath": "http://websvc.blserviceinc.com/AccountReservations/",
+	"apiPath": "https://7188s13ttk.execute-api.us-east-2.amazonaws.com/test/"
+}

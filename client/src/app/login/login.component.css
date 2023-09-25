@@ -1,0 +1,58 @@
+.mat-card-title {
+    font-size: 16px;
+}
+
+.mat-progress-spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+}
+
+#login-box-header {
+    height: 120px; 
+    color: #ffffff; 
+    background-color: #3A86FF;
+}
+
+#login-box-header-title {
+    font-size: 32px; 
+    padding: 72px 0px 0px 48px;
+}
+
+#content-wrapper {
+    padding: 24px 48px 48px 48px;
+}
+
+mat-form-field {
+    width: 354px;
+}
+
+#forgot-password {
+    color: #0645AD; 
+    text-decoration: underline; 
+    cursor: pointer;
+}
+
+#login-button {
+    width: 80px; 
+    margin-left: 264px;
+}
+
+#back-button {
+    margin-left: 200px;
+    margin-top: 20px;
+}
+
+#submit-button {
+    width: 80px;
+}
+
+input {
+    margin-top: 1.25em;
+}
+
+/* ::ng-deep .mat-form-field-appearance-fill .mat-form-field-infix {
+    padding: 1.25em 0 .75em 0 !important;
+} */

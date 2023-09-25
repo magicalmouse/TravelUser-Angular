@@ -1,0 +1,53 @@
+#main-wrapper {
+    width: 600px; 
+    margin: 0px auto; 
+    margin-top: 20px;
+}
+
+.table-wrapper {
+    width: 100%;  
+    height: 500px; 
+    overflow: auto;
+    margin-bottom: 80px;
+}
+
+.save-button {
+    margin-left: 12px;
+}
+
+.mat-progress-spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+}
+
+.addButton {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+#name-dialog-wrapper {
+    font-family: 'Avenir'; 
+    position: relative; 
+    width: 100%; 
+    height: 100%;
+}
+
+mat-form-field {
+    width: 300px; 
+}
+
+#cancel-button {
+    position: absolute; 
+    bottom: 5px; 
+    right: 80px;
+}
+
+#save-button {
+    position: absolute; 
+    bottom: 5px; 
+    right: 5px;
+}

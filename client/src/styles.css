@@ -1,0 +1,177 @@
+@import "./business-portal.css";
+@import "./assets/files/fakescroll.css";
+
+
+@font-face {
+    font-family: 'Avenir';
+    src: url(/assets/fonts/AvenirNextLTPro-Regular.otf);
+ }
+
+ @font-face {
+    font-family: 'Material Icons';
+    src: url(/assets/fonts/MaterialIcons-Regular.ttf);
+ }
+
+ .material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+ input::-webkit-input-placeholder {
+  color: #bbb !important;
+ }
+  
+ input:-moz-placeholder { /* Firefox 18- */
+  color: #bbb !important;  
+ }
+  
+ input::-moz-placeholder {  /* Firefox 19+ */
+  color: #bbb !important;  
+ }
+  
+ input:-ms-input-placeholder {  
+  color: #bbb !important;  
+ }
+ 
+
+ 
+
+body, .mat-drawer-container {
+  background-color: #f1f3f4; 
+  color: #363940; 
+  font-family: 'Avenir', sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.flex-container {
+  display: inline-flex;
+}
+
+.flex-container-column {
+  flex-direction: column;
+}
+
+.centered {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+}
+
+.content-title {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.col {
+  font-size: 12px;
+  padding: 8px 8px;
+  text-align: left;
+}
+
+.sort-link {
+  width: 100%;
+  display:inline-block;
+  font-size: 12px;  
+  cursor: pointer;
+}
+
+.page-link, .page-current {
+  font-size: 14px;
+  display:inline-block;
+}
+
+.page-link {
+  cursor: pointer;
+}
+
+.page-current {
+  font-weight: bold;
+}
+
+.vertical-space-12 {
+  margin-top: 12px;
+}
+
+.vertical-space-24 {
+  margin-top: 24px;
+}
+
+.standard-button {
+  color: #ffffff;
+  background-color: #3A86FF;
+  font-size: 16px;
+}
+
+.account-context {
+  font-size: 12px; 
+  padding-top: 2px; 
+  margin-left: 16px;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: inherit;
+}
+
+
+.my-class .mat-dialog-container{
+  background: #F2C79C !important;
+  z-index: 50 !important;
+}
+
+.mat-header-cell {
+  background-color:#FFFFFF;
+  
+}
+
+.mat-menu-panel {
+  max-width:600px !important;
+}
+
+/* ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+} */
+
+
+@media screen and (min-width: 100px) {  
+    .page-content {
+        margin-top: 78px;
+    }
+}
+
+@media screen and (min-width: 600px) {  
+    .page-content {
+        margin-top: 86px;
+    }
+}

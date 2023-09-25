@@ -1,0 +1,30 @@
+#main-wrapper {
+    width: 600px; 
+    margin: 0px auto; 
+    margin-top: 20px;
+}
+
+.table-wrapper {
+    width:100%; 
+    height:500px !important; 
+    overflow: auto;
+    margin-bottom: 80px;
+}
+
+.mat-card-title {
+    font-size: 16px;
+}
+
+.mat-progress-spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+}
+
+.addButton {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}

@@ -1,0 +1,61 @@
+<mat-spinner style="z-index: 200;" *ngIf="showSpinner"></mat-spinner>
+
+
+<div class = "main-wrapper">
+    <div class = "card-wrapper" style="margin-right: 50px;">
+        
+        <mat-card class='mat-elevation-z4 card'>
+                <mat-card-header>
+                    <mat-card-title>
+                        Profile Photo
+                    </mat-card-title>
+                </mat-card-header>
+                <div id = "crop">
+
+                </div>
+                <img src ="{{currentPhoto}}" class = "photo" id = "profilePic">
+                <input style = "display:none;" id="profilePhotoInput" type="file" onClick = "value = null" (change) ="onFileSelected($event)" #fileSelector/>
+                <button class = "standard-button upload-button" mat-raised-button (click) = "selectProfilePhoto()">Upload Photo</button> 
+        </mat-card>
+    </div>
+
+    <div class = "card-wrapper">
+        <mat-card class='mat-elevation-z4 card'>
+            <mat-card-header>
+                <mat-card-title>
+                    User Info
+                </mat-card-title>
+            </mat-card-header>
+
+            <div class = "info-wrapper">
+                <mat-form-field>
+                    <mat-label>User Email</mat-label>
+                    <input matInput [value] = "appUser.userId" disabled>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>First Name</mat-label>
+                    <input matInput [(ngModel)] = "firstName" autocomplete="off">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Last Name</mat-label>
+                    <input matInput [(ngModel)] = "lastName" autocomplete="off">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Current Password</mat-label>
+                    <input matInput [type]="'password'" [(ngModel)] = "currentPassword" autocomplete="new-password">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>New Password</mat-label>
+                    <input matInput [type]="'password'" [(ngModel)] = "newPassword" autocomplete="new-password">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Confirm New Password</mat-label>
+                    <input matInput [type]="'password'" [(ngModel)] = "newPasswordConfirm" autocomplete="new-password">
+                </mat-form-field>
+            </div>
+            <button class = "standard-button info-update-button" mat-raised-button (click) = onUpdate()>
+                Update
+            </button>
+        </mat-card>
+    </div>
+</div>

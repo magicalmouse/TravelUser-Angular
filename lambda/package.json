@@ -1,0 +1,35 @@
+{
+	"name": "businessportallambda",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"babel-runtime": "^6.26.0",
+		"big-number": "^1.0.0",
+		"bl": "^2.1.2",
+		"core-js": "^2.5.7",
+		"core-util-is": "^1.0.2",
+		"depd": "^2.0.0",
+		"iconv-lite": "^0.4.24",
+		"inherits": "^2.0.3",
+		"isarray": "^2.0.4",
+		"native-duplexpair": "^1.0.0",
+		"nodemailer": "^4.7.0",
+		"pg": "^7.8.0",
+		"process-nextick-args": "^2.0.0",
+		"punycode": "^2.1.1",
+		"readable-stream": "^3.0.6",
+		"regenerator-runtime": "^0.13.1",
+		"safe-buffer": "^5.1.2",
+		"sprintf-js": "^1.1.1",
+		"string_decoder": "^1.2.0",
+		"tedious": "^3.0.1",
+		"util-deprecate": "^1.0.2",
+		"uuid": "^3.3.2"
+	}
+}

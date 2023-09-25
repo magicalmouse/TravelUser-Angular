@@ -1,0 +1,69 @@
+<mat-spinner style="z-index: 200;" *ngIf="showSpinner"></mat-spinner>
+<div id = "user-dialog-wrapper">
+    <div class="flex-container">
+        <div>
+            User Info                        
+        </div>
+    </div>
+
+    <section *ngIf = "showUserInfo">
+        <div id = "user-info-wrapper">
+            <mat-form-field>
+                <mat-label>User Email</mat-label>
+                <input matInput [(ngModel)] = "email" required [disabled] = "showUpdate">  
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>First Name</mat-label>
+                <input matInput [(ngModel)] = "firstName" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Last Name</mat-label>
+                <input matInput [(ngModel)] = "lastName" required>
+            </mat-form-field>
+        </div>
+            
+        <div style = "margin-top: 20px;">
+            <div>
+                Permissions                    
+            </div>
+        </div>
+
+        <div style = "margin-top: 10px;">
+            <div class = "list-wrapper">
+                <mat-selection-list [(ngModel)]="permissions">
+                    <mat-list-option *ngFor="let permission of permissionsLabels" [value]= "permission" style="height: 32px;" [selected] = "permissionIsSelected(permission)">
+                        {{ permission }}
+                    </mat-list-option>
+                </mat-selection-list>
+            </div>
+            
+        </div>
+        <div style = "margin-top: 20px;">
+            <div>
+                Accounts                 
+            </div>
+        </div>
+
+        <div style = "margin-top: 10px; margin-bottom: 10px;">
+            <div class = "list-wrapper">
+                <mat-selection-list #accountsList [(ngModel)]="accounts">
+                    <mat-list-option *ngFor="let acct of appUser.accounts"  [value]="acct.custId + ':' + acct.fleetId" style="height: 32px;">
+                        {{ acct.name }} 
+                    </mat-list-option>
+                </mat-selection-list>
+            </div>
+            <div style = "width: 95%;  margin-top: 60px; margin-bottom: 30px; display: flex; justify-content: flex-end;">
+            <button mat-button (click) = "closeDialog()">
+            Cancel
+            </button>
+            <button class="standard-button" mat-raised-button (click) = onCreate() *ngIf = "!showUpdate" [disabled] = "!enableSaveButton()">
+                Add User
+            </button>
+            <button class="standard-button" mat-raised-button (click) = onUpdate() *ngIf = "showUpdate" [disabled] = "!enableSaveButton()">
+                Update User
+            </button>
+            </div>
+            
+        </div>
+    </section>
+</div>

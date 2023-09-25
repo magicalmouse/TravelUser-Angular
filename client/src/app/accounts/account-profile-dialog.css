@@ -1,0 +1,31 @@
+.mat-progress-spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+}
+
+.account-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.photo-buttons {
+    display: flex; 
+    width: 80%; 
+    margin-left: 10%; 
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.photo-buttons:before,
+.photo-buttons:after {
+    content: '';
+    display: block;
+  }

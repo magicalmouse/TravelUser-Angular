@@ -1,0 +1,61 @@
+<div id = "feedback-dialog-wrapper">
+    <div class="flex-container">
+        <div class="content-title"> 
+                Send Feedback
+        </div>
+    </div>
+    <p>
+        <b>Found a bug? Want a feature? Please send us your feedback so we can troubleshoot issues and improve this portal!</b>
+    </p>
+    <br />
+    <table style="margin-left: 8px; margin-top: 20px;">
+        <tr>
+            <td>
+                <mat-form-field class = "short-input">
+                    <mat-label>First Name</mat-label>
+                    <input required matInput [(ngModel)]="firstName" >
+                </mat-form-field>
+            </td>
+            <td style = "padding-left: 20px;">
+                <mat-form-field class = "short-input">
+                    <mat-label>Last Name</mat-label>
+                    <input required matInput [(ngModel)]="lastName" >
+                </mat-form-field>
+            </td>
+        </tr>
+    </table>
+
+    <table style="margin-left: 8px;">
+        <tr>
+            <td>
+                <mat-form-field class = "long-input">
+                    <mat-label>Email</mat-label>
+                    <input required matInput [(ngModel)]="email">
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field class = "long-input">
+                    <mat-label>Subject</mat-label>
+                    <input required matInput [(ngModel)]="subject" >
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field id = "comments-wrapper">
+                    <mat-label>Comments</mat-label>
+                    <textarea required matInput id = "comments-textarea" [(ngModel)]="text"></textarea>
+                </mat-form-field>
+            </td>
+        </tr>
+    </table>
+        <button mat-button (click)="closeDialog()" id = "feedback-cancel-button">
+            Cancel
+        </button>
+        <button class="standard-button" mat-raised-button (click)="sendFeedback()" [disabled] = "!enableSubmitButton()" id = "feedback-submit-button">
+            Submit
+        </button>  
+    <mat-spinner *ngIf = "showSpinner"></mat-spinner>
+</div>

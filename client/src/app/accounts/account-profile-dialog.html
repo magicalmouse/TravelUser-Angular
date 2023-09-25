@@ -1,0 +1,141 @@
+<mat-spinner style = "z-index: 200;" *ngIf = "showSpinner"></mat-spinner>
+
+<div id = "account-profile-dialog-wrapper">
+        
+    <div class = "flex-container">
+        <div>
+            Account Profile - {{account.name}}
+        </div>
+    </div>
+
+    <div id = "account-photo-container" style = "width: 100%;" *ngIf = "accountLogo">
+        <div style = "margin: 0 auto; width: 30%; margin-top: 10px;">
+            <img src = "{{accountLogo}}" style = "width: 100%;">
+        </div>
+
+        <input style = "display:none;" id="accountPhotoInput" type="file" onClick = "value = null" (change) ="onFileSelected($event)" #fileSelector/>
+
+        <div *ngIf = "appUser.rootAdmin === 1" class = "photo-buttons">
+            <button class = "standard-button" mat-raised-button (click) = "selectAccountPhoto()">Upload Photo</button>
+            <button class = "standard-button" mat-raised-button (click) = "deleteAccountPhoto()" *ngIf = "showDeletePhoto">Delete Photo</button> 
+        </div>
+        
+    </div>
+
+    <div class = "account-info-wrapper" *ngIf = "showProfile && !showEditProfile">
+        <button *ngIf = "appUser.rootAdmin === 1" mat-icon-button (click) = "showEditProfile = !showEditProfile" style = "align-self: flex-end;">
+            <mat-icon>create</mat-icon>
+        </button>
+        <mat-form-field floatLabel = "always">
+            <mat-label>Attn.</mat-label>
+            <input matInput [value] = "attn" disabled>
+        </mat-form-field>
+        <mat-form-field floatLabel = "always">
+            <mat-label>Phone Number</mat-label>
+            <input matInput [value] = "phone" disabled>
+        </mat-form-field>
+        <mat-form-field floatLabel = "always">
+            <mat-label>Address</mat-label>
+            <input matInput [value] = "address1" disabled>
+        </mat-form-field>
+        <mat-form-field floatLabel = "always">
+            <input matInput [value] = "address2" disabled>
+        </mat-form-field>
+        <mat-form-field floatLabel = "always">
+            <mat-label>Fax</mat-label>
+            <input matInput [value] = "fax" disabled>
+        </mat-form-field>
+        <br>
+        <mat-form-field floatLabel = "always">
+            <mat-label>Billing Attn.</mat-label>
+            <input matInput [value] = "billAttn" disabled>
+        </mat-form-field>
+        <mat-form-field floatLabel = "always">
+            <mat-label>Billing Phone Number</mat-label>
+            <input matInput [value] = "billPhone" disabled>
+        </mat-form-field>   
+        <mat-form-field floatLabel = "always">
+            <mat-label>Billing Address</mat-label>
+            <input matInput [value] = "billAddress1" disabled>
+        </mat-form-field>
+        <mat-form-field floatLabel = "always">
+            <input matInput [value] = "billAddress2" disabled>
+        </mat-form-field>
+        <mat-form-field floatLabel = "always">
+            <mat-label>Billing Fax</mat-label>
+            <input matInput [value] = "billFax" disabled>
+        </mat-form-field>
+    </div>
+
+    <div class = "account-info-wrapper" *ngIf = "showProfile && showEditProfile && appUser.rootAdmin === 1" style = "border: 1px solid lightgray;">
+        <button mat-icon-button (click) = "showEditProfile = !showEditProfile" style = "align-self: flex-end;">
+            <mat-icon>create</mat-icon>
+        </button>
+        <mat-form-field>
+            <mat-label>Attn.</mat-label>
+            <input matInput [(ngModel)] = "profile.attn">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Phone Number</mat-label>
+            <input matInput [(ngModel)] = "profile.phone">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Address Line 1</mat-label>
+            <input matInput [(ngModel)] = "profile.addr1">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Address Line 2</mat-label>
+            <input matInput [(ngModel)] = "profile.addr2">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>City</mat-label>
+            <input matInput [(ngModel)] = "profile.city">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>State</mat-label>
+            <input matInput [(ngModel)] = "profile.state">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Zip</mat-label>
+            <input matInput [(ngModel)] = "profile.zip">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Fax</mat-label>
+            <input matInput [(ngModel)] = "profile.fax">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Billing Attn.</mat-label>
+            <input matInput [(ngModel)] = "profile.billAttn">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Billing Phone Number</mat-label>
+            <input matInput [(ngModel)] = "profile.billPhone">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Billing Address Line 1</mat-label>
+            <input matInput [(ngModel)] = "profile.billAddr1">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Billing Address Line 2</mat-label>
+            <input matInput [(ngModel)] = "profile.billAddr2">
+        </mat-form-field>
+                <mat-form-field>
+            <mat-label>Billing City</mat-label>
+            <input matInput [(ngModel)] = "profile.billCity">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Billing State</mat-label>
+            <input matInput [(ngModel)] = "profile.billState">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Billing Zip</mat-label>
+            <input matInput [(ngModel)] = "profile.billZip">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Billing Fax</mat-label>
+            <input matInput [(ngModel)] = "profile.billFax">
+        </mat-form-field>
+        <button class = "standard-button" style = "width: 30%; margin-left: 35%; margin-bottom: 20px;" mat-raised-button (click) = "updateAccountInfo()">Save</button>
+    </div>
+</div>
+

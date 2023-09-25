@@ -1,0 +1,20 @@
+<div id = "name-dialog-wrapper">
+    Add New User                           
+    <div style = "margin-top: 25px;">
+        <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput [(ngModel)] = "firstName" required> 
+        </mat-form-field>
+        <mat-form-field style = "margin-top: 10px;">
+            <mat-label>Last Name</mat-label>
+            <input matInput [(ngModel)] = "lastName" required>
+        </mat-form-field>
+    </div> 
+    <button id = "cancel-button" mat-button (click)="closeDialog()">
+        Cancel
+    </button>
+    <button id = "save-button" class="standard-button dialog-button" mat-raised-button (click) = "onSaved()" [disabled] = "!enableSaveButton()">
+        Save
+    </button>
+    <mat-spinner *ngIf = "showSpinner"></mat-spinner>
+</div>

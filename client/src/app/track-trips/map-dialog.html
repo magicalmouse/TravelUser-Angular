@@ -1,0 +1,24 @@
+<mat-spinner style="z-index: 200;" *ngIf="showSpinner"></mat-spinner>
+<div class = "dialog-wrapper">
+    <div class="flex-container">
+        <div class="content-title"> 
+            Recommended Route
+        </div>
+        <div class = "confirmation-number" *ngIf="tripNbr">
+            Confirmation #{{ tripNbr }}
+        </div>
+    </div>
+    <div id = "map-wrapper"> 
+        <div #gMap id='mapContainer' style='height: 100%; width: 100%;'>
+        </div>
+    </div>
+    <div>
+        
+        <button class="standard-button dialog-button" mat-raised-button (click)="closeDialog()">
+            OK
+        </button>
+        <button id = "update-map-button" mat-button (click) = "updateMap()" *ngIf = "showUpdateButton()">
+            Update
+        </button>
+    </div>    
+</div>
